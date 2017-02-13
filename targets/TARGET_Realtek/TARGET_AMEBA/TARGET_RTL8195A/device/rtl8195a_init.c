@@ -51,7 +51,6 @@ extern uint8_t __image2_entry_func__[];
 extern uint8_t __image2_validate_code__[];
 #endif
 
-
 extern VECTOR_Func NewVectorTable[];
 extern void SystemCoreClockUpdate(void);
 extern void PLAT_Start(void);
@@ -186,6 +185,8 @@ INFRA_START_SECTION void PLAT_Init(void)
 //3 Image 2
 extern _LONG_CALL_ void * __rtl_memset_v1_00(void * m , int c , size_t n);
 
+//extern uint32_t mbed_stack_isr_start;
+//extern uint32_t mbed_stack_isr_size;
 INFRA_START_SECTION void PLAT_Start(void)
 {
 	u8 isFlashEn;
@@ -196,6 +197,9 @@ INFRA_START_SECTION void PLAT_Start(void)
     __rtl_memset_v1_00((void *)__bss_start__, 0, __bss_end__ - __bss_start__);
 
     TRAP_OverrideTable(0x1FFFFFFC);
+/* add by Ian --for mbed isr stack address setting */
+		__set_MSP(0x1fffffbc);
+
 
 #ifdef CONFIG_SPIC_MODULE 
 	if ((HAL_PERI_ON_READ32(REG_SOC_FUNC_EN) & BIT_SOC_FLASH_EN) != 0) {
