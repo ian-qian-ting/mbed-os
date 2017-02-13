@@ -159,7 +159,7 @@ place at start of BD_RAM_region   {
                         		};
 place at end of BD_RAM_region{
 							block HEAP, 
-							block CSTACK 
+							//block CSTACK 
 							};
 
 /****************************************
@@ -180,6 +180,8 @@ place at start of TCM_region { 	//readwrite,
                                 overlay TCM_overlay
                                     }; 
 
+/* modify by Ian - for mbed stack isr start address setting*/
+place at end of TCM_region { block CSTACK };
 
 define exported symbol __rom_bss_start__ = 0x10000300; 	// use in rom
 define exported symbol __rom_bss_end__ = 0x10000bc8;	// use in rom
