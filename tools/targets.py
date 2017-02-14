@@ -497,6 +497,14 @@ class NCS36510TargetCode:
         from tools.add_fib import add_fib_at_start
         print("binf ", binf)
         add_fib_at_start(binf[:-4])
+
+class RTL8195ACode:
+    """RTL8195A Hooks"""
+    @staticmethod
+    def binary_hook(t_self, resources, elf, binf):
+        sys.path.append(os.path.abspath("./mbed-os/targets/TARGET_Realtek/TARGET_AMEBA/sdk/soc/realtek/8195a/misc"))
+        import postbuild
+        postbuild.elf2bin(elf, binf, t_self.name)
 ################################################################################
 
 # Instantiate all public targets
