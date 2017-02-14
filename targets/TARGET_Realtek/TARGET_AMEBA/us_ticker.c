@@ -141,3 +141,5 @@ void us_ticker_clear_interrupt(void)
 {
     HalTimerOp.HalTimerIrqClear((u32)TimerAdapter.TimerId);
 }
+
+
