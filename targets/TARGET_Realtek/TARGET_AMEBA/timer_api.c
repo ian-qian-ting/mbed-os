@@ -148,3 +148,5 @@ void gtimer_stop (gtimer_t *obj)
 }
 
 #endif  // end of "#if CONFIG_TIMER_EN"
+
+
