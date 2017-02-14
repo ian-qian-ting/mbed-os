@@ -43,3 +43,5 @@ void gtimer_start_periodical (gtimer_t *obj, uint32_t duration_us, void* handler
 void gtimer_stop (gtimer_t *obj);
 
 #endif
+
+
