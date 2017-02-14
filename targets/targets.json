@@ -2639,7 +2639,7 @@
     "SARA_NBIOT_EVK": {
         "inherits": ["SARA_NBIOT"],
         "extra_labels": ["ublox", "HI2110", "SARA_NBIOT"]
-    }
+    },
     "REALTEK_RTL8195AM": {
         "core": "Cortex-M3",
         "default_toolchain": "GCC_ARM",
