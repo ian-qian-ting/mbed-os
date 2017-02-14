@@ -872,3 +872,5 @@ void serial_rx_fifo_level(serial_t *obj, SerialFifoLevel FifoLv)
 #if DEVICE_SERIAL_ASYNCH 
 #endif
 #endif
+
+
