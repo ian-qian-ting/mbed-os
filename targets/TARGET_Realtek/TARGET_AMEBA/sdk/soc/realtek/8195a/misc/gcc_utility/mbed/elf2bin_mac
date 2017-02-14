@@ -21,7 +21,7 @@ cp ${CWD}/../../bsp/image/ram_1_mac.p.bin ${DIR_IMAGE}/ram_1.p.bin
 RAM1_BIN=${DIR_IMAGE}/ram_1.p.bin
 RAM2_BIN=${APPIMG}-ram-${POSTFIX}.bin
 RAM3_BIN=${APPIMG}-dram-${POSTFIX}.bin
-BUILDBIN=${CWD}/../../prepend_header.sh
+BUILDBIN=${CWD}/../../tools/prepend_header.sh
 
 
 #${PAD} 44k 0xFF ${DIR_IMAGE}/ram_1.p.bin
